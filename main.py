@@ -1,6 +1,6 @@
 import pygame
 from logger import log_state
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT, PLAYER_RADIUS
+from constants import *
 from player import Player
 
 
@@ -24,6 +24,7 @@ def draw_screen():
                 return
             
         screen.fill("black")
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 100                                               #limit to 60 fps
