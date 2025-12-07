@@ -15,9 +15,6 @@ def draw_screen():
     clock = pygame.time.Clock()
     dt = 0
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    
-    #draw_screen()
-
     while True:                                                                 #infinite while loop
         log_state()
         for event in pygame.event.get():
@@ -26,6 +23,8 @@ def draw_screen():
         screen.fill("black")
         pygame.display.flip()
         dt = clock.tick(60) / 100                                               #limit to 60 fps
+
+
 def print_intro():
         print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
         print(f"Screen width: {SCREEN_WIDTH}")
