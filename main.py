@@ -1,9 +1,11 @@
 import pygame
-from logger import log_state
+import sys
+from logger import log_state, log_event
 from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from circleshape import CircleShape
 
 
 def main():
@@ -33,6 +35,12 @@ def draw_screen():
             
         screen.fill("black")
         updatable.update(dt)
+
+        for asteroid in asteroids:
+             if asteroid.collides_with(player):
+                  log_event("player_hit")
+                  print("Game over!")
+                  sys.exit()
 
         for object in drawable:
             object.draw(screen)
