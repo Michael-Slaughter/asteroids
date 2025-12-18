@@ -1,4 +1,4 @@
-import pygame
+import pygame                                                                   #imports all of the modules needed
 import sys
 from logger import log_state, log_event
 from constants import *
